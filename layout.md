@@ -1,6 +1,6 @@
 # layout
 ## text input : database
-## text input : tabe / view 
+## text input : table / view 
 ## radio group : command
 * select
 * insert
