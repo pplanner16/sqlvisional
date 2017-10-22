@@ -9,6 +9,10 @@
 <form action="/sqlvisional.cgi" method="post">
   Database : <input type="text" name="db"><br>
   Table / view : <input type="text" name="tab"><br>
+  <input type="radio" name="command" value="select" checked> select<br>
+  <input type="radio" name="command" value="insert"> insert<br>
+  <input type="radio" name="command" value="update"> update<br>
+  <input type="radio" name="command" value="delete"> delete<br>
   <input type="submit" value="Submit">
 </form>
 </body>
