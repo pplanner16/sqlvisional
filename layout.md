@@ -10,7 +10,7 @@
 * select : result columns
 * insert : fill columns, values
 * update : set columns, operator, values
-## where columns
+## filter columns
 * columns, operators, values
 ## text input : statement
 ## post button
