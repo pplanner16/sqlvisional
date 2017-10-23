@@ -1,18 +1,17 @@
 # Technical Design
 ## Design principles
 - platform independant
-- client server
+- stand alone / client server / peer to peer
 - most processing logic and data stored in database
 ## Flow
-- front end posts SQL statement
+- front end posts command
 - HTTP server calls CGI program
 - CGI program executes SQL statement on database
 - CGI program queries the result on database
 - CGI program outputs html including query result
 - HTTP server returns output to client
-## Front end
+## Front end HTTP client
 - web browser
-- HTTP client
 ## Server
 - HTTP server
 - SQL database

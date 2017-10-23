@@ -6,6 +6,7 @@
 * insert
 * update
 * delete
+* import
 ## destination columns and values
 * select : result columns
 * insert : fill columns, values

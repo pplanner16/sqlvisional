@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form action="sqlvisional.cgi" method="post">
+<form enctype="multipart/form-data" method="post" action="sqlvisional.cgi">
   Database <input type="text" name="db"><br>
   Table / view <input type="text" name="tab"><br>
   <input type="radio" name="command" value="select" checked> select<br>
@@ -14,7 +14,7 @@
   <input type="radio" name="command" value="update"> update<br>
   <input type="radio" name="command" value="delete"> delete<br>
   <input type="radio" name="command" value="import"> import<br>
-  SQL statement <input type="text" name="sql"><br>
+  statement <input type="text" name="sql"><br>
   <input type="submit" value="Submit">
 </form>
 </body>
