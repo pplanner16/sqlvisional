@@ -28,14 +28,14 @@
     if error
 	append error to htmloutput
     else
-	while no rows are returned
+	while no rows are or errors returned
 	    build new SQL statement based on last executed statement
 	    execute new SQL statement
         append rows to htmloutput
     append htmlpagebottom table to htmloutput
 ### buildnewsql(last sql statement)
-    extract table name and main statement
-    query defaultqueries  
+    search patternqueries with last sql statement
+    execute patternqueries.subsequentquery
 ### runtests
     query testcase
     while still more rows
@@ -44,9 +44,8 @@
 #### testcases
 - SQL statement - client request
 - SQL statement - Expected result
-#### defaultqeueries
-- statement name (insert, update, delete)
-- table name
+#### patternqueries
+- statement pattern
 - query statement
 ##### default entries
 - insert_table_name, '', sql to extract table from insert statement 
