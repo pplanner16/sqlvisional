@@ -1,7 +1,7 @@
 # Technical Design
 ## Design principles
 - platform independant
-- stand alone / client server / peer to peer
+- client server
 - most processing logic and data stored in database
 ## Flow
 - front end posts command
@@ -10,6 +10,9 @@
 - CGI program queries the result on database
 - CGI program outputs html including query result
 - HTTP server returns output to client
+### Commands
+- import table
+- SQL statement
 ## Front end HTTP client
 - web browser
 ## Server
@@ -18,8 +21,9 @@
 - CGI program
 ## CGI program
 - wrapper for database
-- build new statement if no result row returned from last statement
+- builds and executes new statement if no result row returned from last statement
 - unit tests
+- import table
 ### writeprocess(sql statement from front end)
     printf(process(sql statement from front end))
 ### process(sql statement from front end, htmloutput)
@@ -28,14 +32,8 @@
     if error
 	append error to htmloutput
     else
-	while no rows are or errors returned
-	    build new SQL statement based on last executed statement
-	    execute new SQL statement
-        append rows to htmloutput
-    append htmlpagebottom table to htmloutput
-### buildnewsql(last sql statement)
-    search patternqueries with last sql statement
-    execute patternqueries.subsequentquery
+	while no rows are returned
+	    recursively search for subsequent SQL statement
 ### runtests
     query testcase
     while still more rows
@@ -44,7 +42,9 @@
 #### testcases
 - SQL statement - client request
 - SQL statement - Expected result
-#### patternqueries
+#### subsequent_queries
+- id
+- parent id
 - statement pattern
 - query statement
 ##### default entries
